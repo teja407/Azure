@@ -1,0 +1,88 @@
+Azure DNS  100 zones per subscription, 5000 record set for zones,20 records for record set.
+Limitations: we need buy public domain from other domain (Go Daddy. Etc.)
+DNS: converts human readable name to the IP.
+=====================================================================================
+Azure Traffic Manager:
+Allows us to control the distribution of user traffic.
+Supported traffic manager endpoint: Azure end points, External end points, nested end points.
+Features:
+Traffic distribution b/w on-premises and cloud based applications.
+Traffic manager improves availability of critical applications.
+
+It helps us to route the traffic but how?
+It supports 4 methods for routing user traffic:
+1.	Weighted (50% to one location and another to some other)
+2.	Anti –passive: priority based, if 1st goes down, then only go to second.
+3.	Geography: I want only India people to access this application.
+4.	Performance: location based
+
+ILB (internal Load Balancer): check out. (if u use ILB we no need to give public IP to the VM’S)
+CNAME : www.contoso.com CNAME to contoso.traffic.net (alias name)
+A record: IP address (IPV4) public
+AAAA: ipv6 address
+Azure Traffic Manger: Basically used to route the traffic b/w zones (either azure – azure or on premises to azure)
+Azure Application Gateway: Application Delivery controller (ADC as a service)
+Works at application layer.
+Supports layer 7 load balancing capabilities for our application.
+It can be configured as internet facing gateway, internal only gateway or a combination of both.
+
+Features: WAF, HTTP load balancer, ssl offload, URL based content routing, Health monitoring, Multi-site routing, Request redirect, advanced diagnostics.
+
+Azure Application Gateway is a web traffic load balancer that enables you to manage traffic to your web applications
+
+Application gateway 2 features:
+ Reverse Proxy (SSL terminated done here, which will save lot of cpu cycle time), WAF (which protects our website which we hosted from DDos attacks, SQL injection like that).
+
+SSL Secure Socket layer:
+HTTPS Request  SSL  (If u don’t have any application gateway, SSL Termination will be handled by web app .. that means it will receive the encrypted packet and it will decrypt the packet and read it. that means it requires cpu cycle time to decryption of package) if we use Application gateway .it will do will ssl offload. In application gateway ssl certification installed and it will take the traffic coming from the internet. if it is https then it will do encryption and decryption.
+
+Azure Load Balancer:
+It delivers high availability and network performance to your applications.
+It is a Layer 4 (TCP, UDP) load balancer.
+Works at transport layer.
+
+Internet LB and Internal LB:
+Internet LB:
+Azure Load balancer maps the public ip address and port number of incoming traffic to the private ip address and the port number of virtual machine.
+
+Internal LB:
+ILB directs traffic only to the resources inside the cloud service or using vpn to access the azure infrastructure.
+
+========================================================================
+
+
+Azure load balancer: Transport layer(layer 4), protocals to app : Any,
+Application Gateway: application layer(layer 7), reverse-proxy, supports http, https and websockets.
+Traffic manager: DNS level,Any,supports only internet facing applications.
+Azure Site Recovery:
+Azure Recovery Services contribute to your BCDR strategy:
+
+Site Recovery service: Site Recovery helps ensure business continuity by keeping business apps and workloads running during outages. Site Recovery replicates workloads running on physical and virtual machines (VMs) from a primary site to a secondary location. When an outage occurs at your primary site, you fail over to secondary location, and access apps from there. After the primary location is running again, you can fail back to it.
+Backup service: The Azure Backup service keeps your data safe and recoverable by backing it up to Azure.
+Site Recovery can manage replication for:
+
+Azure VMs replicating between Azure regions.
+On-premises VMs, Azure Stack VMs and physical servers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
